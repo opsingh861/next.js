@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const getProducts = async () => {
     const response = await fetch("https://dummyjson.com/products");
     const products = await response.json();
@@ -14,6 +16,7 @@ export default async function ProductList() {
                     <li key={product.title}>
                         <h2>{product.title}</h2>
                         <p>{product.description}</p>
+                        <Button price={product.price} />
                     </li>
                 ))}
             </ul>
