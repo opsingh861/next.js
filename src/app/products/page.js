@@ -2,16 +2,15 @@
 
 import { useEffect, useState } from "react"
 
-async function fetchProducts() {
-    const response = await fetch('https://dummyjson.com/products');
-    const data = await response.json();
-    return data.products;
-}
-
 export default function ProductList() {
     const [products, setProducts] = useState([])
+    const getProductList = async () => {
+        const response = await fetch("https://dummyjson.com/products")
+        const products = await response.json()
+        setProducts(products.products)
+    }
     useEffect(() => {
-        fetchProducts().then(products => setProducts(products))
+        getProductList()
     }, [])
     return (
         <main>
