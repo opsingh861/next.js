@@ -1,29 +1,16 @@
-import img from './OIP.jpeg'
-import Image from 'next/image'
+import { Roboto } from 'next/font/google'
 
+const roboto = Roboto({
+  weight: '100',
+  display: 'swap',
+  subsets: ['cyrillic-ext', 'greek']
+})
 export default function Home() {
-  console.log(img)
   return (
     <main>
-      <h1>Image optimization</h1>
-      {/* <Image
-        src={img}
-        alt="Picture of the author"
-        width={200}
-        height={200} />
-      <br />
-      <br />
-      <h2>Without next Image tag</h2>
-      <img height={100} width={100} src={img.src} alt="Picture of the author" /> */}
-
-      <h1>Using external Links</h1>
-      <Image
-        src="https://getwallpapers.com/wallpaper/full/e/5/a/299879.jpg"
-        width={400}
-        height={400} />
-
-      <img src="https://getwallpapers.com/wallpaper/full/e/5/a/299879.jpg" alt="Picture of the author"
-     />
+      <h1>Font optimization</h1>
+      <h2 style={{ fontFamily: 'roboto', fontWeight: '100' }}>Robot mono using link</h2>
+      <h2 className={roboto.className}>Roboto using next.js font</h2>
     </main>
   )
 }
