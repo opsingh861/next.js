@@ -11,3 +11,8 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+export const metadata={
+  title: 'Home page',
+  description: 'This is the home page',
+}
