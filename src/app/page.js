@@ -1,17 +1,29 @@
-'use client'
-import { useState } from 'react'
-import style from './style.module.css'
+import img from './OIP.jpeg'
+import Image from 'next/image'
+
 export default function Home() {
-  const [color, setColor] = useState('red')
-  const {blue} = style
+  console.log(img)
   return (
     <main>
-      <h1>Conditional Styling</h1>
-      <h2 style={{ color: color == 'red' ? 'red' : 'green' }}>Heading 2</h2>
-      <h3 className={color == 'red' ? style.red : style.green}>Heading 3</h3>
-      <button onClick={() => setColor(color == 'red' ? 'green' : 'red')}>Change Color</button>
-      <h2 className={blue}>blue</h2>
-      <h2 id={style.orange}>Orange</h2>
+      <h1>Image optimization</h1>
+      {/* <Image
+        src={img}
+        alt="Picture of the author"
+        width={200}
+        height={200} />
+      <br />
+      <br />
+      <h2>Without next Image tag</h2>
+      <img height={100} width={100} src={img.src} alt="Picture of the author" /> */}
+
+      <h1>Using external Links</h1>
+      <Image
+        src="https://getwallpapers.com/wallpaper/full/e/5/a/299879.jpg"
+        width={400}
+        height={400} />
+
+      <img src="https://getwallpapers.com/wallpaper/full/e/5/a/299879.jpg" alt="Picture of the author"
+     />
     </main>
   )
 }
