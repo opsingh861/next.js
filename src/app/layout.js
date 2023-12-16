@@ -6,6 +6,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,200;1,300&family=Roboto:wght@100&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/common.css" />
       </head>
       <body>{children}</body>
     </html>
