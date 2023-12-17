@@ -1,17 +1,17 @@
-import { Roboto } from 'next/font/google'
+import { BASE_URL } from "../../config/constant"
 
-const roboto = Roboto({
-  weight: '100',
-  display: 'swap',
-  subsets: ['cyrillic-ext', 'greek']
-})
-export default function Home() {
-  return (
-    <main>
-      <h1>Font optimization</h1>
-      <h2 style={{ fontFamily: 'roboto', fontWeight: '100' }}>Robot mono using link</h2>
-      <h2 className={roboto.className}>Roboto using next.js font</h2>
-    </main>
-  )
+export default async function Page() {
+    const data = process.env.NODE_ENV
+    console.log(data)
+    console.log(process.env.PASSWORD)
+    return (
+        <div>
+            <h1>Home</h1>
+            {
+                data === "development" ? <p>Development</p> : <p>Production</p>
+            }
+            <p>{BASE_URL}</p>
+        </div>
+    )
 }
 
