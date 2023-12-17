@@ -1,4 +1,5 @@
 import getUser from "../../../../services/GetUser"
+
 export default async function Page({ params }) {
     let users = await getUser()
     let userNo = params.user
@@ -12,17 +13,6 @@ export default async function Page({ params }) {
             <p>{user.email}</p>
         </div>
     )
-}
-
-export async function getStaticPaths() {
-    let users = await getUser()
-    let paths = users.map(user => ({
-        params: { user: user.id.toString() }
-    }))
-    return {
-        paths,
-        fallback: false
-    }
 }
 
 export async function generateStaticParams() {
