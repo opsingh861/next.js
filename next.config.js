@@ -3,7 +3,6 @@ const nextConfig = {
     images: {
         domains: ['getwallpapers.com']
     },
-    output:'export',
 }
 
 module.exports = nextConfig
