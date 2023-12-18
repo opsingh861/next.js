@@ -5,7 +5,6 @@ async function getUser(id) {
 }
 export default async function Page({ params }) {
     let userDetail = await getUser(params.user);
-    console.log(userDetail)
 
     return (
         <div>
