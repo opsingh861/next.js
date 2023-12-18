@@ -1,25 +1,18 @@
-import getUser from "../../../../services/GetUser"
-
+async function getUser(id) {
+    const res = await fetch(`http://localhost:3000/api/users/${id}`)
+    const user = await res.json()
+    return user
+}
 export default async function Page({ params }) {
-    let users = await getUser()
-    let userNo = params.user
-    let user = users[userNo - 1]
-    console.log(user)
+    let userDetail = await getUser(params.user);
+    console.log(userDetail)
 
     return (
         <div>
             <h1>Users</h1>
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
+            <h2>Name: {userDetail.name}</h2>
+            <p>Age: {userDetail.age}</p>
+            <p>Id: {userDetail.id}</p>
         </div>
     )
-}
-
-export async function generateStaticParams() {
-    let data = await getUser()
-    let users = await data
-    return users.map(user => ({
-        user: user.id.toString()
-    }))
-
 }
