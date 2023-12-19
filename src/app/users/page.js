@@ -1,3 +1,4 @@
+import DeleteUser from "@/util/DeleteUser";
 import Link from "next/link";
 
 async function getUsers() {
@@ -16,12 +17,19 @@ export default async function Page() {
                 users.map(user => (
                     <div key={user.id}>
                         <h2>
-                            <Link href={`/users/${user.id}`}>
-                                {user.name}
-                            </Link>
-                            <Link href={`/users/${user.id}/update`}>
-                             Edit
-                            </Link>
+                            <span style={{ margin: '20px' }}>
+                                <Link href={`/users/${user.id}`}>
+                                    {user.name}
+                                </Link>
+                            </span>
+                            <span style={{ margin: '20px' }}>
+                                <Link href={`/users/${user.id}/update`}>
+                                    Edit
+                                </Link>
+                            </span>
+                            <span style={{ margin: '20px' }}>
+                                <DeleteUser id={user.id} />
+                            </span>
                         </h2>
                     </div>
                 ))

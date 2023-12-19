@@ -36,7 +36,7 @@ export default function Page({ params }) {
             <h1>Update User</h1>
             <input value={name} type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
             <input value={age} type="text" placeholder="Age" onChange={(e) => setAge(e.target.value)} />
-            <button onClick={updateUser}>Update</button>
+            <span> <button onClick={updateUser}>Update</button></span>
         </div>
     )
 }
