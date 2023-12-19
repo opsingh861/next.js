@@ -8,6 +8,8 @@ export async function GET() {
 export async function POST(req, res) {
     let payload = await req.json();
     console.log(payload);
+    
+    console.log(payload);
     if(!payload.name || !payload.age) {
         return NextResponse.json({result:"name and age are required",success:false}, { status: 400})
     }

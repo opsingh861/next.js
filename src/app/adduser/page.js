@@ -8,7 +8,7 @@ export default function AddUser() {
     const [success, setSuccess] = useState(false);
 
     const addUser = async () => {
-        if(!name || !age) {
+        if (!name || !age) {
             alert("name and age are required");
             return;
         }
@@ -22,8 +22,6 @@ export default function AddUser() {
         const data = await res.json();
         setResult(data.result);
         setSuccess(data.success);
-        console.log(data);
-        console.log(name, age)
     };
 
     return (

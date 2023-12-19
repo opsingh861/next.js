@@ -7,3 +7,11 @@ export async function GET(req, res) {
 
     return NextResponse.json(user.length==0?{error:"User not found",success:false}:user,{success:true}, { status: 200 })
 }
+
+export async function PUT(req, res) {
+    let payload = await req.json();
+    payload.id = res.params.user;
+    console.log(payload)
+    if(!payload.id || !payload.name || !payload.age) return NextResponse.json({error:"given data are not valid",success:false}, { status: 404 })
+    return NextResponse.json({success:true}, { status: 200 })
+}   
