@@ -19,6 +19,9 @@ export default async function Page() {
                             <Link href={`/users/${user.id}`}>
                                 {user.name}
                             </Link>
+                            <Link href={`/users/${user.id}/update`}>
+                             Edit
+                            </Link>
                         </h2>
                     </div>
                 ))
