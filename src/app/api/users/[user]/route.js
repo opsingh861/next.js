@@ -15,3 +15,10 @@ export async function PUT(req, res) {
     if(!payload.id || !payload.name || !payload.age) return NextResponse.json({error:"given data are not valid",success:false}, { status: 404 })
     return NextResponse.json({success:true}, { status: 200 })
 }   
+
+export async function DELETE(req, res) {
+    let user = res.params.user;
+    console.log(user)
+    if(!user) return NextResponse.json({error:"given data are not valid",success:false}, { status: 404 })
+    return NextResponse.json({message:"Deleted successfully"}, { status: 200 })
+}
