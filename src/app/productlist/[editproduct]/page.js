@@ -38,8 +38,7 @@ export default function Page(props) {
         else {
             alert(data.result)
         }
-        if(!flag)
-        {console.log("flag")
+        if(!flag){
             Router.push("/productlist")
         }
     }

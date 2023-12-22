@@ -22,3 +22,14 @@ export async function PUT(req, res) {
     const data = await Product.findOneAndUpdate(filter, payload);
     return NextResponse.json({ result: "Product details updated", success: true }, { status: 200 })
 }
+
+export async function DELETE(req, res) {
+    const productID = res.params.productID;
+    const filter = { _id: productID };
+    await mongoose.connect(db);
+    const data = await Product.deleteOne(filter);
+    if (data.deletedCount == 0)
+        return NextResponse.json({ result: "Product not found", success: false }, { status: 200 })
+    else
+        return NextResponse.json({ result: data, success: true }, { status: 200 })
+}
