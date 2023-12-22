@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import "./style.css"
+import "@/app/style.css"
 export default function Page() {
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
