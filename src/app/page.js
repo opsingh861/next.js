@@ -1,16 +1,12 @@
-import { BASE_URL } from "../../config/constant"
+import Link from "next/link"
 
-export default async function Page() {
-    const data = process.env.NODE_ENV
-    console.log(data)
-    console.log(process.env.PASSWORD)
+export default  function Page() {
     return (
         <div>
-            <h1>Home</h1>
-            {
-                data === "development" ? <p>Development</p> : <p>Production</p>
-            }
-            <p>{BASE_URL}</p>
+            <h1>Home Page</h1>
+            <Link href="http://localhost:3000/addproduct">
+                Add product
+            </Link>
         </div>
     )
 }

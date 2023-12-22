@@ -1,0 +1,29 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.input{
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.btn{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #0885c4;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #0a7ac4;
+}
